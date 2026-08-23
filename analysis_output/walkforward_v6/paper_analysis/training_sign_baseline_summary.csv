@@ -1,0 +1,2 @@
+Label,CumReturn,AnnReturn,AnnVol,Sharpe,Sortino,MaxDrawdown,Calmar,PctPositive,NPositionChanges,N_days,GrossPnL,TransactionCost
+Training-Sign Directional Baseline,0.240216,0.048389,0.205956,0.2349,0.354,-0.39979,0.121,50.28,1,1251,0.25496142858244786,0.014745247786113296

@@ -1,0 +1,6 @@
+strategy,GrossPnL_Mean,TransactionCost_Mean,BreakEvenCostMultiplier,BreakEvenLambda,Interpretation
+Full IQN,-0.1295543032857021,0.3578184831173839,,,Negative gross P&L; no non-negative cost can break even
+No Explicit Regime IQN,-0.1137263066376754,0.4284693398160734,,,Negative gross P&L; no non-negative cost can break even
+Parameter-Matched Double DQN,0.2228897066848497,0.3782511489093756,0.5892637929257192,0.00029463189646285957,Positive gross signal; viable only below break-even cost
+w/o Regime-in-Reward,-0.0983751132228141,0.363400862820969,,,Negative gross P&L; no non-negative cost can break even
+w/o Regime-in-State,0.1065807616759879,0.4320707496476121,0.2466743276718291,0.00012333716383591454,Positive gross signal; viable only below break-even cost

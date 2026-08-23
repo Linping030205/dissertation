@@ -1,0 +1,6 @@
+comparison,wins,N,WinRatePct
+DQN > IQN,15,25,60.0
+DQN > Z-score,13,25,52.0
+IQN > Z-score,14,25,56.0
+DQN Sharpe > 0,8,25,32.0
+IQN Sharpe > 0,5,25,20.0

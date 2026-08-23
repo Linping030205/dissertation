@@ -1,0 +1,10 @@
+# PyTorch is intentionally excluded: install/load a CUDA-enabled build that
+# matches the CUDA module and NVIDIA driver available on the allocated node.
+numpy==1.26.4
+pandas==2.2.3
+scipy==1.13.1
+statsmodels==0.14.4
+gymnasium==1.0.0
+matplotlib==3.9.4
+seaborn==0.13.2
+openpyxl==3.1.5

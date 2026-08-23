@@ -1,0 +1,5 @@
+strategy,Label,CumReturn,AnnReturn,AnnVol,Sharpe,Sortino,MaxDrawdown,Calmar,PctPositive,NPositionChanges,N_days,TotalCost
+Always Long Spread,Always Long Spread,-0.269707,-0.054329,0.205961,-0.2638,-0.3522,-0.711537,-0.0764,49.64,1,1251,0.014745247786113296
+Always Short Spread,Always Short Spread,0.240216,0.048389,0.205956,0.2349,0.354,-0.39979,0.121,50.28,1,1251,0.014745247786113296
+Cash / No Trade,Cash / No Trade,0.0,0.0,0.0,0.0,,0.0,,0.0,0,1251,0.0
+Z-score Rule,Z-score Rule,-0.199215,-0.04013,0.122279,-0.3282,-0.4466,-0.371586,-0.108,12.95,61,1251,0.05142259771018423
