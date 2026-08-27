@@ -26,3 +26,23 @@ S*.xlsx
 SM*.xlsx
 analysis_output/spread_features_SSM.xlsx
 
+# Thesis authoring, literature, and format-conversion artifacts are not part of
+# the reproducibility release.
+analysis_output/walkforward_v6/paper_analysis/*discussion_draft.md
+analysis_output/walkforward_v6/paper_analysis/threats_to_validity_draft.md
+Full_Dissertation*.md
+Chapter*_draft*.md
+Chapters_*_source.md
+results_summary_for_supervisor*.md
+*_draft_review.md
+PROJECT_INDEX.md
+build_*docx.py
+make_docx_contact_sheets.py
+scan_pdf_bounds.py
+scan_unicode_chapters.py
+*.docx
+*.pdf
+*.tex
+figures/
+文献/
+草稿/
