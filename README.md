@@ -71,7 +71,7 @@ See [docs/REPRODUCIBILITY.md](docs/REPRODUCIBILITY.md) for the complete workflow
 
 ## Data availability
 
-Raw market data and the derived feature workbook are not redistributed because their redistribution rights have not been established. The exact data-vendor continuation-contract settings therefore cannot be reconstructed from this repository alone. Checkpoints are also excluded because they are large and contain machine-specific provenance paths. The repository does include all 95 daily out-of-sample strategy paths, aggregated non-sensitive result tables, figures, the deterministic manifest and source code.
+Raw market data exported from Refinitiv Workspace and the derived feature workbook are not redistributed because their redistribution rights have not been established. The export files do not contain enough metadata to reconstruct the exact continuation-series settings, so those settings cannot be recovered from this repository alone. Checkpoints are also excluded because they are large and contain machine-specific provenance paths. The repository does include all 95 daily out-of-sample strategy paths, aggregated non-sensitive result tables, figures, the deterministic manifest and source code.
 
 `CumReturn`, `AnnReturn` and `MaxDrawdown` are additive spread-return P&L quantities. They are not portfolio-capital percentages, because no capital or futures-margin base is defined.
 

@@ -23,7 +23,7 @@ from statsmodels.tsa.stattools import adfuller, coint
 # SHARED CONFIGURATION
 # =========================================================================
 
-# Raw Bloomberg Excel column order (encoding-safe positional rename)
+# Raw Refinitiv Workspace Excel column order (encoding-safe positional rename)
 EXCEL_COLS = [
     "Date", "Close", "Change", "PctChange",
     "Open", "Low", "High", "Volume", "OpenInterest", "Bid", "Ask",

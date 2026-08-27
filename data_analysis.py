@@ -108,7 +108,7 @@ plt.rcParams.update({
 print("=" * 70)
 print("  INTER-COMMODITY SPREAD TRADING -- DATA ANALYSIS")
 print("  Commodity pool: CL / NG / HG / S / SM")
-print("  Source: Bloomberg Terminal")
+print("  Source: Refinitiv Workspace")
 print("=" * 70)
 
 dfs, common_idx, extras = load_commodities(DATA_DIR, supplementary=("CL2",))
