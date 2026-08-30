@@ -1,0 +1,10 @@
+Grouped out-of-sample permutation sensitivity
+Fixed final v6 checkpoints; no retraining or model selection.
+Variants: Full IQN, w/o Regime-in-Reward
+Seeds: (42, 123, 2024)
+Years: (2021, 2022, 2023, 2024, 2025)
+Block length: 20; repeats: 20
+Each selected feature is replaced as a complete 10-day history.
+All unselected features, endogenous position state, realised returns, cost accounting and reward setting remain unchanged.
+Baseline daily P&L, positions and dates were exactly reproduced from the audited formal task JSON before each intervention.
+Interpretation: descriptive fixed-policy sensitivity, not causal feature attribution under retraining.

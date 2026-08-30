@@ -1,4 +1,6 @@
-# Regime-Aware Distributional Reinforcement Learning for Commodity Spread Trading
+# Commodity Spread Trading under Relationship Deterioration
+
+## A Controlled Evaluation of Regime-Aware Distributional Reinforcement Learning
 
 This repository contains the source code, archived formal outputs and result-audit materials for a dissertation study of regime-aware distributional reinforcement learning applied to the soybean--soybean-meal spread. The experiment compares four IQN configurations and a parameter-matched Double DQN under an expanding-window out-of-sample design.
 
@@ -25,6 +27,7 @@ The repository reports a negative-result study. None of the RL configurations es
 |-- train.py / evaluate.py        training and evaluation
 |-- run_walkforward*.py           expanding-window experiment runners
 |-- paper_*analysis.py            paper tables, figures and diagnostics
+|-- paper_feature_sensitivity.py  fixed-checkpoint permutation diagnostic
 |-- verify_release.py             public-result integrity check
 |-- walkforward_manifest.tsv      authoritative 95-task manifest
 |-- analysis_output/
@@ -48,9 +51,44 @@ A valid release ends with `PASS`, confirms 95 unique tasks and recomputes every 
 
 This command verifies the archived outputs; it does **not** rerun feature engineering, retrain the agents or independently recreate the results from raw market data.
 
+The archived grouped permutation-sensitivity tables can be regenerated from
+their saved task-level interventions without the licensed data or checkpoints:
+
+```bash
+poetry run python paper_feature_sensitivity.py --summarize-only
+```
+
+Rerunning the interventions themselves requires the omitted final feature
+workbook and trained checkpoints. This diagnostic perturbs fixed policies and
+does not claim causal feature attribution under retraining.
+
 ## Install and run the code
 
-The reference environment used Python 3.9.6 and PyTorch 2.1.0. For a CPU environment:
+The reference environment used Python 3.9.6 and PyTorch 2.1.0. Poetry is the
+recommended local CPU setup because `poetry.lock` records the complete resolved
+dependency graph:
+
+```bash
+poetry install
+poetry run python verify_release.py
+```
+
+The project supports Python 3.9--3.11. If Poetry has selected an unsupported
+interpreter, choose one explicitly before installation, for example:
+
+```bash
+poetry env use python3.9
+poetry install
+```
+
+The archived-result verifier itself uses only the Python standard library, so
+it can also be run without installing the scientific or RL dependencies:
+
+```bash
+python verify_release.py
+```
+
+For a conventional CPU virtual environment instead of Poetry:
 
 ```bash
 python -m venv .venv
@@ -59,7 +97,10 @@ python -m pip install --upgrade pip
 python -m pip install -r requirements.txt
 ```
 
-For UCL Myriad, use `requirements-myriad.txt` and load the cluster-provided GPU PyTorch module as described in `MYRIAD_README.md`.
+For UCL Myriad, continue to use `requirements-myriad.txt` and load the
+cluster-provided GPU PyTorch module as described in `MYRIAD_README.md`. The
+Poetry lock targets a portable CPU setup and should not replace a CUDA build
+chosen to match the allocated node's driver and module stack.
 
 Full retraining additionally requires authorised copies of the licensed source workbooks and the final derived feature file. Place `analysis_output/spread_features_SSM.xlsx` at the documented relative path, then run a manifest task, for example:
 

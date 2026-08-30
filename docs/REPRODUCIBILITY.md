@@ -35,6 +35,41 @@ The verification script only uses the Python standard library.
 
 CUDA is not required for verification. GPU availability must be checked inside an allocated compute job rather than on a login node.
 
+### Poetry environment
+
+For a local CPU reproduction environment, install the locked dependencies from
+the repository root:
+
+```bash
+poetry install
+poetry run python verify_release.py
+```
+
+`pyproject.toml` declares Python 3.9--3.11 and the direct dependencies, while
+`poetry.lock` records the resolved transitive dependency graph. This repository
+is configured with `package-mode = false` because it is a collection of research
+scripts rather than an installable library. The existing `requirements.txt`
+remains available for users who do not use Poetry.
+
+On Myriad, use the cluster-provided PyTorch/CUDA modules and
+`requirements-myriad.txt` instead. A generic Poetry-resolved PyTorch wheel is
+not a substitute for a GPU build matched to the cluster driver stack.
+
+### Grouped permutation sensitivity
+
+The formal task-level perturbation results are archived under
+`analysis_output/walkforward_v6/paper_analysis/feature_sensitivity/`. Their
+checkpoint-level and grouped summaries can be regenerated with:
+
+```bash
+poetry run python paper_feature_sensitivity.py --summarize-only
+```
+
+Re-executing the perturbations requires the omitted trained checkpoints and
+derived feature workbook. The procedure is a fixed-policy sensitivity check:
+it measures changes after block-permuting selected 10-day input histories and
+does not identify causal feature contributions under retraining.
+
 ## 3. End-to-end experiment
 
 The training pipeline expects the final derived feature workbook at:
@@ -69,4 +104,3 @@ MaxDrawdown = min(E - cumulative_max(E))
 ```
 
 This prevents an opening loss from being treated as the initial peak. No compounded portfolio equity or capital-normalised percentage return is claimed.
-
